@@ -33,4 +33,4 @@ export function KegItem({keg, handleClickItem}) {
 KegItem.propTypes = {
     keg: propTypes.array,
     handleClickItem: propTypes.func,
-}
+};

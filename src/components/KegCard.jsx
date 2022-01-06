@@ -47,4 +47,4 @@ export function KegCard({keg, closeModal}) {
 KegCard.propTypes = {
     keg: propTypes.array,
     closeModal: propTypes.func
-}
+};

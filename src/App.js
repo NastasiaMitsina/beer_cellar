@@ -25,7 +25,7 @@ const styles = {
 
 function App() {
     const [kegs, setKegs] = useState([]);
-    const [key, setKey] = useState('name');
+    const [key, setKey] = useState('');
     const [addNewKeg, setAddNewKeg] = useState(false);
     const [findKeg, setFindKeg] = useState('');
 
@@ -66,17 +66,17 @@ function App() {
     function sortByDifferentValues() {
         if (kegs) {
             switch (key) {
+                case '': 
+                    setKey('name');
+                    break;
                 case 'name':
                     setKey('abv');
-                    sortByValue('name');
                     break;
                 case 'abv':
                     setKey('ibu');
-                    sortByValue('abv');
                     break;
                 case 'ibu':
-                    setKey('name');
-                    sortByValue('ibu');
+                    setKey('');
                     break;
                 default:
                     console.log(key);
@@ -84,15 +84,11 @@ function App() {
         }
     }
 
-    function sortByValue(value) {
-        setKegs(
-            [...kegs].sort((beerX, beerY) => {
-                return beerX[value] < beerY[value] ? -1 : 1;
-            }),
-        );
-    }
+    const sortedKegs = [...kegs].sort((beerX, beerY) => {
+        return beerX[key] < beerY[key] ? -1 : 1;
+    })
 
-    const filteredKegs = kegs.filter((keg) => {
+    const filteredKegs = sortedKegs.filter((keg) => {
         const value = findKeg.toLocaleLowerCase();
         let {name, abv, ibu} = keg;
         abv = String(keg.abv);
@@ -115,7 +111,7 @@ function App() {
                         required
                     />
                     <button className="main-button" onClick={sortByDifferentValues}>
-                        Sort
+                        {key ? `Sorted by ${key}` : 'Sort'}
                     </button>
                 </div>
                 <KegList kegs={filteredKegs} />

@@ -41,4 +41,4 @@ export function KegList({kegs}) {
 
 KegList.propTypes = {
     kegs: propTypes.array,
-}
+};
