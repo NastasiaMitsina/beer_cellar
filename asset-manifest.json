@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/beer_cellar/static/css/main.8d4d2f3c.css",
+    "main.js": "/beer_cellar/static/js/main.9707f2d3.js",
+    "static/js/787.dfc1dc68.chunk.js": "/beer_cellar/static/js/787.dfc1dc68.chunk.js",
+    "static/media/kegDefault.png": "/beer_cellar/static/media/kegDefault.6c73e3eb2d980ef8e1a7.png",
+    "static/media/background.png": "/beer_cellar/static/media/background.a4df56dfa6806a6f55a3.png",
+    "index.html": "/beer_cellar/index.html",
+    "main.8d4d2f3c.css.map": "/beer_cellar/static/css/main.8d4d2f3c.css.map",
+    "main.9707f2d3.js.map": "/beer_cellar/static/js/main.9707f2d3.js.map",
+    "787.dfc1dc68.chunk.js.map": "/beer_cellar/static/js/787.dfc1dc68.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8d4d2f3c.css",
+    "static/js/main.9707f2d3.js"
+  ]
+}
