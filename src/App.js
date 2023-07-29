@@ -42,7 +42,7 @@ function App() {
             );
     }, []);
 
-    const toogle = (event) => {
+    const toggle = (event) => {
         setAddNewKeg(!addNewKeg);
         setTimeout(() => {
             event.target.scrollIntoView();
@@ -66,33 +66,33 @@ function App() {
     function sortByDifferentValues() {
         if (kegs) {
             switch (key) {
-                case '': 
-                    setKey('name');
-                    break;
-                case 'name':
-                    setKey('abv');
-                    break;
-                case 'abv':
-                    setKey('ibu');
-                    break;
-                case 'ibu':
-                    setKey('');
-                    break;
-                default:
-                    console.log(key);
+            case '':
+                setKey('name');
+                break;
+            case 'name':
+                setKey('abv');
+                break;
+            case 'abv':
+                setKey('ibu');
+                break;
+            case 'ibu':
+                setKey('');
+                break;
+            default:
+                console.log(key);
             }
         }
     }
 
     const sortedKegs = [...kegs].sort((beerX, beerY) => {
         return beerX[key] < beerY[key] ? -1 : 1;
-    })
+    });
 
     const filteredKegs = sortedKegs.filter((keg) => {
         const value = findKeg.toLocaleLowerCase();
         let {name, abv, ibu} = keg;
-        abv = String(keg.abv);
-        ibu = String(keg.ibu);
+        abv = String(abv);
+        ibu = String(ibu);
         return name.toLocaleLowerCase().includes(value) || abv.includes(value) || ibu.includes(value);
     });
 
@@ -115,7 +115,7 @@ function App() {
                     </button>
                 </div>
                 <KegList kegs={filteredKegs} />
-                <button className="main-button" onClick={(event) => toogle(event)}>
+                <button className="main-button" onClick={(event) => toggle(event)}>
                     Add a new keg
                 </button>
                 {addNewKeg && <NewKegForm />}
